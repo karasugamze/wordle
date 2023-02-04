@@ -1,10 +1,15 @@
 import sys
 
-WoD = sys.argv[1]
+print("""WELCOME TO THE WORDLE GAME
+GUESS THE WORDS OF THE DAY!!
+YOU HAVE THE RIGHT TO GUESS FİVE WORDS..""")
+
+WoD = sys.argv[1]         #word of the day
 counter=0
 
 while counter<6:
-    Try = input("Try:" )
+    Try = input("Try:" )       #guess
+    #the length of the guessed word is checked
     while len(Try)>5:
         print("The length of word must be five")
         counter+=1
@@ -14,6 +19,7 @@ while counter<6:
         counter += 1
         Try = input("Try")
     while len(Try)==5:
+        #The letters of the guessed word are compared with the letters of the word of the day.
         if Try!=WoD:
             for i in range(0,4):
                 if Try[i] == WoD[i]:
